@@ -16,7 +16,6 @@
   }
 </script>
 
-<!-- Add a back button -->
 {#if !showMainPage}
   <button class="back-button" on:click={goBack}>Back</button>
 {/if}
@@ -63,13 +62,13 @@
     flex-wrap: wrap;
     gap: 1rem;
     justify-content: center;
-    margin-bottom: auto; /* Push everything else to the bottom */
+    margin-bottom: auto;
   }
 
   .prompt {
     background: none;
     border: 2px solid #555;
-    border-radius: 16px; /* Circular edges */
+    border-radius: 16px; 
     padding: 10px 20px;
     font-size: 16px;
     color: #fff;
@@ -89,15 +88,15 @@
     transform: translateX(-50%);
     display: flex;
     gap: 1rem;
-    width: 80%; /* Set the width to your preference */
-    max-width: 600px; /* You can set a max-width if needed */
+    width: 80%;
+    max-width: 600px; 
   }
 
   input {
-    padding: 1.5rem; /* Increased padding */
-    border: 2px solid #555; /* Adjusted border */
-    border-radius: 30px; /* More rounded borders for a modern look */
-    font-size: 1rem; /* Adjust the font size as needed */
+    padding: 1.5rem;
+    border: 2px solid #555;
+    border-radius: 30px;
+    font-size: 1rem;
     color: #121212;
     background: #fff;
     flex-grow: 1;
@@ -126,7 +125,7 @@
     padding: 0.5rem 1rem;
     font-size: 1rem;
     border: none;
-    background-color: #444; /* Same as the hover state of the submit button */
+    background-color: #444;
     color: white;
     border-radius: 22px;
     cursor: pointer;
