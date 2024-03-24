@@ -1,4 +1,7 @@
 <script>
+  import VideoResults from './Results.svelte';
+  let showChat = true;
+  let showVideo = false;
   let question = '';
   let prompts = [
     "Explain how to solve a linear system",
@@ -14,12 +17,20 @@
   function goBack() {
     showMainPage(true);
   }
+
+  function startVideo() {
+    showChat = false;
+    setTimeout(() => {
+      showVideo = true;
+    }, 400);
+  }
 </script>
 
 {#if !showMainPage}
   <button class="back-button" on:click={goBack}>Back</button>
 {/if}
 
+{#if showChat}
 <div class="prompt-container">
   <div class="prompt-suggestions">
     {#each prompts as prompt}
@@ -30,9 +41,12 @@
   </div>
   <div class="input-group">
     <input type="text" bind:value={question} placeholder="Message Brontutor..." />
-    <button>Submit</button>
+    <button on:click={startVideo}>Submit</button>
   </div>
 </div>
+{:else if showVideo}
+  <VideoResults />
+{/if}
 
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
